@@ -1,0 +1,42 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+from base.base_class import Base
+
+
+class Main_page(Base):
+
+
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.driver = driver
+
+
+    choose_model = "//a[@href='/Catalog/Global/Cars/Suzuki/26727']" # model_page
+
+
+    # Getters
+
+    def get_choose_model(self):
+        return WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.choose_model)))
+
+
+    # Actions
+
+    def click_choose_model(self):
+        self.get_choose_model().click()
+        print("Click choose_model")
+
+
+    # Methods
+
+    def select_products(self):
+        self.get_current_url()
+        self.driver.execute_script("window.scrollTo(0, 700)")
+        self.click_choose_model()
+
+
+
+
