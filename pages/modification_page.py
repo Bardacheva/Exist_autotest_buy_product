@@ -3,9 +3,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilities.logger import Logger
+import allure
 
-
-class Main_page(Base):
+class Modification_page(Base):
 
 
     def __init__(self, driver):
@@ -13,29 +14,31 @@ class Main_page(Base):
         self.driver = driver
 
 
-    choose_model = "//a[@href='/Catalog/Global/Cars/Suzuki/26727']" # model_page
+    modification = "//a[@href='/Catalog/Global/Cars/Suzuki/26727/36C00078/?r=1']"
 
 
     # Getters
 
-    def get_choose_model(self):
+    def get_modification(self):
         return WebDriverWait(self.driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, self.choose_model)))
+            EC.element_to_be_clickable((By.XPATH, self.modification)))
 
 
     # Actions
 
-    def click_choose_model(self):
-        self.get_choose_model().click()
-        print("Click choose_model")
+    def click_modification(self):
+        self.get_modification().click()
+        print("Click modification")
 
 
     # Methods
 
-    def select_products(self):
-        self.get_current_url()
-        self.driver.execute_script("window.scrollTo(0, 700)")
-        self.click_choose_model()
+    def select_modification(self):
+        with allure.step("Select_modification"):
+            Logger.add_start_step(method="select_modification")
+            self.get_current_url()
+            self.click_modification()
+            Logger.add_end_step(url=self.driver.current_url, method="select_modification")
 
 
 

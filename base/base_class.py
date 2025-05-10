@@ -16,16 +16,17 @@ class Base():
     # Method assert word
 
     def assert_word(self, word, result):
-        value_word = word.text
-        assert value_word == result
-        print("Good value word")
+        assert word == result
+        print("Successful verification of the value")
+
 
     # Method Screenshot
 
     def get_screenshot(self):
         now_date = datetime.now().strftime("%Y.%m.%d.%H.%M.%S")
         name_screenshot = 'screenshot ' + now_date + '.png'
-        self.driver.save_screenshot(f"./screen/{name_screenshot}")
+        self.driver.save_screenshot(f"C:\\Users\\Пользователь\\PycharmProjects\\Main_Project_sel\\screen\\{name_screenshot}")
+
 
     # Method assert URL
 
