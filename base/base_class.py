@@ -2,6 +2,7 @@ from datetime import datetime
 
 
 class Base():
+# Основные методы для всех классов
 
     def __init__(self, driver):
         self.driver = driver

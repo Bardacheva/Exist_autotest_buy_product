@@ -9,6 +9,7 @@ from utilities.logger import Logger
 import allure
 
 class Cart_page(Base):
+    # Работа с корзиной
 
     description_from_cart = ''
     sum_from_cart = ''

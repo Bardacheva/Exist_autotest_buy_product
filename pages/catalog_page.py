@@ -7,7 +7,7 @@ from utilities.logger import Logger
 import allure
 
 class Catalog_page(Base):
-
+    # Выбор товара дл покупки
 
     def __init__(self, driver):
         super().__init__(driver)

@@ -10,6 +10,7 @@ from utilities.logger import Logger
 import allure
 
 class Finish_page(Base):
+    # Работа на финальной странице
 
     description_from_finish = ''
     sum_from_finish = ''

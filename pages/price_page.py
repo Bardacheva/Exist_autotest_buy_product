@@ -8,6 +8,7 @@ import allure
 
 
 class Price_page(Base):
+    # Работа на странице прайс-листа
 
     description_from_pp = ''
     sum_from_pp = ''

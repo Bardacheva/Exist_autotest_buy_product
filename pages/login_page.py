@@ -7,6 +7,7 @@ from utilities.logger import Logger
 import allure
 
 class Login_page(Base):
+    # Работа на странице авторизации
 
     url = 'https://exist.ru/'
 

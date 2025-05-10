@@ -7,7 +7,7 @@ from utilities.logger import Logger
 import allure
 
 class Modification_page(Base):
-
+    # Выбор модификации автомобиля
 
     def __init__(self, driver):
         super().__init__(driver)
